@@ -6,9 +6,10 @@ bp = Blueprint('pets', __name__, url_prefix="/pets")
 @bp.route('/')
 def index(): 
     pets = json.load(open('pets.json'))
-    print(pets)
     return render_template('index.html', pets=pets)
 
-@bp.route('/adopt')
-def adopt():
-    return "I have a pet"
+@bp.route('/<int:index>')
+def show(index):
+    pets = json.load(open('pets.json'))
+    pet = pets[index]
+    return render_template('show.html', pet=pet)

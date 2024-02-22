@@ -1,4 +1,6 @@
 from flask import Flask
+from .pets import bp as pets_bp
+import json
 # factory
 def create_app():
     app = Flask(__name__)
@@ -10,10 +12,6 @@ def create_app():
     # register pet blueprint 
     from . import pets
     app.register_blueprint(pets.bp)
-
-    @app.route('/pets/adopt')
-    def adopt():
-        return "i have a pet"
 
     # return the app 
     return app
