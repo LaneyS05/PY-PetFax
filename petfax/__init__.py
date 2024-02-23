@@ -1,17 +1,19 @@
-from flask import Flask
+from flask import Flask, render_template
 from .pets import bp as pets_bp
-import json
-# factory
+from .facts import bp as facts_bp
+
+# factory  
 def create_app():
     app = Flask(__name__)
 
-    @app.route("/")
-    def index():
-        return "this is home"
-
     # register pet blueprint 
-    from . import pets
-    app.register_blueprint(pets.bp)
+    app.register_blueprint(pets_bp)
+    app.register_blueprint(facts_bp)
+
+    @app.route("/") 
+    def index():
+        return render_template('home.html') 
 
     # return the app 
     return app
+

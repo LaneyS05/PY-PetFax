@@ -7,13 +7,18 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='style.css') }}"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
   </head>
   <body>
-    <h1>Fax about {{pet.pet_name}}</h1>
+    <a class="back" href="http://127.0.0.1:5000/pets/">Back </a>
+    <h1>Fax about {{ pet.pet_name }}</h1>
     <div class="div">
-      <h2>{{pet.pet_name}}</h2>
-      <img src="{{pet.pet_photo}}" alt="{{ pet.name }}" />
-      <p><strong>Fun Fact:</strong> {{ pet.fun_fact }}</p>
+      <h2>{{ pet.pet_name }}, <i class="fas {{ pet.pet_icon }}"></i></h2>
+      <img src="{{ pet.pet_photo }}" alt="{{ pet.name }}" />
     </div>
+    <h3><strong>Fun Fact:</strong> {{ pet.pet_fact }}</h3>
   </body>
 </html>

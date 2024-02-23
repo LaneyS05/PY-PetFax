@@ -13,3 +13,4 @@ def show(index):
     pets = json.load(open('pets.json'))
     pet = pets[index]
     return render_template('show.html', pet=pet)
+

@@ -1,0 +1,42 @@
+body {
+    background-color: beige;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: flex-start; /* Align items to the top */
+    align-items: center; /* Horizontally center */
+    height: 100vh; /* Full height of the viewport */
+    margin: 0; /* Remove default margin */
+}
+
+h1 {
+    font-size: 50px;
+    margin-top: 20px; 
+    border-bottom: 5px solid #916a34;
+    color: #da7e54;
+}
+
+h3 {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background-color: #b9cff0;
+    border-radius: 20px;
+    border: #916a34 2px solid;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+.div {
+    animation: fadeInAnimation ease 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

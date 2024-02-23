@@ -1,6 +1,26 @@
-<body>
-  <h1>{{title}}</h1>
-  {% for pet in pets:%}
-  <img src="{{pet.pet_photo}}" />
-  {% endfor %}
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Here Are Our Pets</h1>
+    <div class="container">
+      {% for pet in pets %}
+      <div class="img-container">
+        <img src="{{ pet.pet_photo }}" alt="{{ pet.name }}" />
+        <div class="link-container">
+          <a href="http://127.0.0.1:5000/pets/{{ pet.pet_id }}">Learn more</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <a class="a" href="http://127.0.0.1:5000/new">Tell us a fact</a>
+  </body>
+</html>
