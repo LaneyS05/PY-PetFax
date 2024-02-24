@@ -2,7 +2,7 @@ from flask import Flask, render_template
 from .pets import bp as pets_bp
 from .facts import bp as facts_bp
 
-# factory  
+# factory 
 def create_app():
     app = Flask(__name__)
 
