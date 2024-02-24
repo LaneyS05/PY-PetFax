@@ -1,11 +1,11 @@
 body {
     background-color: beige;
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    justify-content: flex-start; /* Align items to the top */
-    align-items: center; /* Horizontally center */
-    height: 100vh; /* Full height of the viewport */
-    margin: 0; /* Remove default margin */
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: center; 
+    height: 100vh; 
+    margin: 0;
 }
 
 h1 {

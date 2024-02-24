@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Update Fact</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -11,18 +11,24 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='fax.css') }}" />
   </head>
   <body>
-    <h1>Give Us Some Fax <i class="far fa-comment"></i></h1>
-    <p>Share some facts of your own</p>
-    <br />
-    <form action="/new/facts" method="POST">
+    <h1>Update Fact</h1>
+    <form action="/new/update/{{ fact.id }}" method="POST">
       <div class="fact-form">
         <label for="name">Name</label>
-        <input type="text" id="name" name="name" /><br /><br />
-        <!-- Corrected name to 'name' -->
-        <label for="fact">Fax</label>
-        <input type="text" id="fact" name="fact" /><br /><br />
-        <!-- Corrected name to 'fact' -->
-        <input type="submit" value="Submit" />
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value="{{ fact.submitter }}"
+        /><br /><br />
+        <label for="fact">Fact</label>
+        <input
+          type="text"
+          id="fact"
+          name="fact"
+          value="{{ fact.fact }}"
+        /><br /><br />
+        <input type="submit" value="Update" />
       </div>
     </form>
   </body>
