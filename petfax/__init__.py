@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from .pets import bp as pets_bp
+from .pets import bp as pets_bp 
 from .facts import bp as facts_bp
 
 db = SQLAlchemy()
